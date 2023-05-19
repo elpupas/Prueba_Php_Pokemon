@@ -16,6 +16,12 @@ class Ataque
         return $this->nombre;
     }
 
-    public function getPoder(){}
+    public function getPoder(){
+        return $this->poder;
+    }
+
+    public function __toString(){
+        return "Nombre del ataque:".  $this->nombre . "\nPoder:" . $this->poder . "\n";
+    }
     
 }

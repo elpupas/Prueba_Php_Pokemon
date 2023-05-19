@@ -7,16 +7,16 @@ Class Pokemon{
     private $peso;
     private $altura;
 
-    private $ataques = array(); //primer array declarado sin añadir al constructor, solo getter
-    private $ataques2 = array();
+   // private $ataques = array(); //primer array declarado sin añadir al constructor, solo getter
+    private $ataques = array();
     
-    public function __construct($nombre, $tipo, $idPokeDex, $peso, $altura, $ataques2) {
+    public function __construct($nombre, $tipo, $idPokeDex, $peso, $altura, $ataques) {
         $this->nombre = $nombre;
         $this->tipo = $tipo;
         $this->idPokeDex = $idPokeDex;
         $this->peso = $peso;
         $this->altura = $altura;
-        $this->ataques2 = $ataques2;
+        $this->ataques = $ataques;
         
 
     } 
@@ -27,26 +27,26 @@ Class Pokemon{
     public function getTipo(){
         return $this->tipo;
     }
-    public function getAtaques2(){
-        return $this->ataques2;
+    public function getAtaques(){
+        return $this->ataques;
     }
-    function adAtaque(Ataque $a){
+  /*  function adAtaque(Ataque $a){
+        $this->ataques[] = $a;
+
+    }*/
+    function adAtaque(Ataque $a):void{
         $this->ataques[] = $a;
 
     }
-    function adAtaque2(Ataque $a):void{
-        $this->ataques2[] = $a;
-
-    }
     public function mostrarAtaques() {
-        foreach ($this->ataques2 as $ataque) {
-            echo $ataque->getNombre();
+        foreach ($this->ataques as $ataque) {
+            echo"Pokemon: " . $this->nombre . "\n". $ataque->__toString();
         }
     }
     
     
     public function __toString(){
-        return "Pokemon:". $this->getNombre() . "\tTipo:" . $this->getTipo() . "\n" . "Ataques" . $this->getAtaques2();
+        return "Pokemon:". $this->getNombre() . "\tTipo:" . $this->getTipo() . "\n";
     }
 
 }
