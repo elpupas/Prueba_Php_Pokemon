@@ -1,27 +1,34 @@
 <?php
 class Ataque
 {
-    private $nombre;
+    //Atributes
+    //Atributos
+    private $nombreAtaque;
+
     private $poder;
     private $tipoAtaque;
-    public function __construct($nombre, $poder, $tipoAtaque)
+    //Construct
+    //Constructor
+    public function __construct($nombreAtaque, $poder, $tipoAtaque)
     {
-        $this->nombre = $nombre;
+        $this->nombreAtaque = $nombreAtaque;
         $this->poder = $poder;
         $this->tipoAtaque = $tipoAtaque;
     }
-
-    public function getNombre()
+    //Getter
+    public function getnombreAtaque()
     {
-        return $this->nombre;
+        return $this->nombreAtaque;
     }
 
     public function getPoder(){
         return $this->poder;
     }
-
+    //Method toString
     public function __toString(){
-        return "Nombre del ataque:".  $this->nombre . "\nPoder:" . $this->poder . "\n";
+        return "nombreAtaque del ataque:".  $this->nombreAtaque . "\nPoder:" . $this->poder . "\n";
     }
+    
+
     
 }
